@@ -932,7 +932,7 @@
 			
 			//This allows to delegate sorting to external plugin such as sortable jquery-ui
 			if( !(evt instanceof DragEvent) && options.sort === false){
-				return false;
+				this._nulling();
 			}
 
 			clearInterval(this._loopId);
