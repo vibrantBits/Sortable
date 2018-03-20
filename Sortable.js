@@ -929,6 +929,11 @@
 		_onDrop: function (/**Event*/evt) {
 			var el = this.el,
 				options = this.options;
+			
+			//This allows to delegate sorting to external plugin such as sortable jquery-ui
+			if( !(evt instanceof DragEvent) && options.sort === false){
+				return false;
+			}
 
 			clearInterval(this._loopId);
 			clearInterval(autoScroll.pid);
